@@ -15,3 +15,49 @@ Maecenas purus nunc, mollis non dignissim a, auctor non nisl. Sed scelerisque sa
 quam aliquet. Duis ut nulla vitae enim egestas suscipit id at metus. Nam eleifend fermentum lectus, ac gravida enim 
 aliquet non. Maecenas non eros tincidunt, viverra nulla vitae, tristique dolor. Praesent vel magna sit amet dui sagittis 
 aliquam. Fusce posuere est et maximus ultrices.
+
+
+## Setup (Provisional)
+
+Trying to use docker. My reasoning:
+  - Less setup hassle
+  - Could share with everyone
+  - Need to learn more docker
+
+Installation:
+  - https://docs.docker.com/engine/install/ubuntu/
+
+
+
+Possible base images:
+```
+  docker pull openjdk
+  docker tag openjdk bc/jdp:0.0
+
+```
+
+  - Writeup here: https://snyk.io/blog/docker-for-java-developers/
+  - Cheatsheet: https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf
+  - Xyz: https://www.getconvey.com/blog/java-based-docker-services/
+
+
+Dockerfile something like this:
+```
+FROM openjdk
+RUN mkdir /labs
+RUN groupadd -r jbloggs && useradd -r -s /bin/false -g jbloggs jbloggs
+WORKDIR /labs
+RUN chown -R jbloggs:jbloggs /labs
+USER jbloggs
+CMD tail -f /dev/null
+```
+
+
+Hopefully VSCode will work. 
+  - Has docker and Java extensions
+  - Extensions:
+    - https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+
+
+
+
