@@ -1,18 +1,33 @@
-# Lorem Ipsum
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra ligula non lacus vehicula, non viverra orci aliquet. 
-Proin at vehicula mauris. Cras ornare nulla nec dolor fringilla, et ornare nibh fermentum. Orci varius natoque penatibus et 
-magnis dis parturient montes, nascetur ridiculus mus. Quisque non metus ex. Maecenas vel pulvinar elit, eget egestas enim. 
-Praesent commodo elit mauris, eu porttitor nisi imperdiet sit amet. Nam eget enim varius, dignissim lectus in, luctus neque. 
-Cras a sem non lacus gravida finibus sed non eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id 
-varius nisl.
 
-Fusce accumsan odio mauris. In commodo, tortor at commodo lacinia, erat ipsum scelerisque justo, ac ornare turpis nibh non 
-augue. Quisque volutpat enim nec justo porttitor, sit amet dapibus sem volutpat. Donec in feugiat lacus. Quisque ac est 
-gravida, commodo arcu vitae, tincidunt risus. Nullam tempor nunc vel lorem aliquet posuere. Nunc non ante sed lacus 
-luctus commodo ut sit amet arcu. Donec at fermentum risus. Ut mi sem, dignissim eu gravida id, faucibus in augue. 
-Maecenas purus nunc, mollis non dignissim a, auctor non nisl. Sed scelerisque sapien eget augue semper, at placerat 
-quam aliquet. Duis ut nulla vitae enim egestas suscipit id at metus. Nam eleifend fermentum lectus, ac gravida enim 
-aliquet non. Maecenas non eros tincidunt, viverra nulla vitae, tristique dolor. Praesent vel magna sit amet dui sagittis 
-aliquam. Fusce posuere est et maximus ultrices.
+## Fulfillment
+#### Background
+This application manages a warehouse. Here's the normal sequence for an order:
+   placed -> in process -> picked -> shipped -> delivered
+
+But there are some other paths:
+   * When the warehouse is out of product, an order is backordered.
+   * When stuff comes in, the backorder goes to "in process".
+   * Only backorders can be cancelled.
+
+Currently, the order has a Status field, populated by one of the following string constants:
+   * placed
+   * in process
+   * picked
+   * shipped
+   * delivered
+
+
+#### Problem
+  * Occasionally, orders end up in a bogus state. It's unclear how, but something takes them from shipped to placed, and customers are getting duplicate product.
+  * The next release includes support for lost orders. (Currently customer service just places a new order when customers complain.
+
+How do you model the order status so that it's hard to screw up and easy to change the flow?
+
+
+
+
+
+
+
 

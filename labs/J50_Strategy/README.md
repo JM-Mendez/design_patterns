@@ -1,18 +1,15 @@
-# Lorem Ipsum
+## Sales Leads
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas viverra ligula non lacus vehicula, non viverra orci aliquet. 
-Proin at vehicula mauris. Cras ornare nulla nec dolor fringilla, et ornare nibh fermentum. Orci varius natoque penatibus et 
-magnis dis parturient montes, nascetur ridiculus mus. Quisque non metus ex. Maecenas vel pulvinar elit, eget egestas enim. 
-Praesent commodo elit mauris, eu porttitor nisi imperdiet sit amet. Nam eget enim varius, dignissim lectus in, luctus neque. 
-Cras a sem non lacus gravida finibus sed non eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id 
-varius nisl.
+#### Background
+Your company generates sales leads-- essentially a person who's interested in a particular product category-- and sells them on to clients. Clients 'own' leads for a set amount of time before they expire. 
 
-Fusce accumsan odio mauris. In commodo, tortor at commodo lacinia, erat ipsum scelerisque justo, ac ornare turpis nibh non 
-augue. Quisque volutpat enim nec justo porttitor, sit amet dapibus sem volutpat. Donec in feugiat lacus. Quisque ac est 
-gravida, commodo arcu vitae, tincidunt risus. Nullam tempor nunc vel lorem aliquet posuere. Nunc non ante sed lacus 
-luctus commodo ut sit amet arcu. Donec at fermentum risus. Ut mi sem, dignissim eu gravida id, faucibus in augue. 
-Maecenas purus nunc, mollis non dignissim a, auctor non nisl. Sed scelerisque sapien eget augue semper, at placerat 
-quam aliquet. Duis ut nulla vitae enim egestas suscipit id at metus. Nam eleifend fermentum lectus, ac gravida enim 
-aliquet non. Maecenas non eros tincidunt, viverra nulla vitae, tristique dolor. Praesent vel magna sit amet dui sagittis 
-aliquam. Fusce posuere est et maximus ultrices.
+The application's user interface allows clients to export their leads into a variety of formats. Because the list of leads can be quite long, downloads are often compressed into one of the following formats: zip, rar, 7z, tar/gz.
+
+#### Problem
+Managing all the different compression algorithms is getting ugly. Right now the Exporter class just has one method for each style of compression. Adding support for a new compression method means adding a new method then modifying several case statements.
+
+How do you refactor the application to reduce the ugliness?
+
+
+
 
