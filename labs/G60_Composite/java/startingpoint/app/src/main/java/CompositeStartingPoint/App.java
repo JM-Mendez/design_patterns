@@ -1,11 +1,17 @@
 package CompositeStartingPoint;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
+    
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Position[] positions = {
+            Position.Open("EUR",2300, Direction.Long),
+            Position.Open("YEN",83300, Direction.Short),
+        };
+        
+        System.out.println("Here are my positions:");
+        for(Position p : positions){
+            System.out.println(p);
+        }
+
     }
 }
