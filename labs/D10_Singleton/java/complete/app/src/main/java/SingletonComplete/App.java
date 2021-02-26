@@ -1,6 +1,3 @@
-
-
-
 package SingletonComplete;
 
 public class App {
