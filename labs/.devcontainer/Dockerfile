@@ -15,10 +15,7 @@ RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/
 ARG INSTALL_NODE="false"
 ARG NODE_VERSION="lts/*"
 RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
-# RUN curl -s "https://get.sdkman.io" | bash 
-# RUN bash -c "source /usr/local/sdkman/bin/sdkman-init.sh && sdk install springboot"
 
-#COPY scripts/etc/bashrc /etc/bashrc
+# TODO: Unhardcode the destination... use $HOME or something.
 COPY scripts/etc/bashrc /home/vscode/.bashrc
 
-#ENV BASH_ENV /etc/bashrc
