@@ -16,6 +16,9 @@ ARG INSTALL_NODE="false"
 ARG NODE_VERSION="lts/*"
 RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# TODO: Unhardcode the destination... use $HOME or something.
-COPY scripts/etc/bashrc /home/vscode/.bashrc
+# PWSH
+COPY scripts/powershell-debian.sh /tmp/library-scripts/
+RUN apt-get update && bash /tmp/library-scripts/powershell-debian.sh
 
+# TODO: Unhardcode the destination... use $HOME or something.
+COPY scripts/home/.bashrc /home/vscode/.bashrc
