@@ -1,10 +1,9 @@
-package FizzBuzz;
+package FizzBuzzComplete;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    
     
     @Test public void toMessage_should_be_Fizz_for_9() {
         final String expected = "Fizz";
@@ -30,7 +29,5 @@ public class AppTest {
         final String actual = App.toMessage(15);
         assertEquals(expected, actual);
     }
-
-
 
 }

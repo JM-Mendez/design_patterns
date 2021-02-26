@@ -26,5 +26,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'FizzBuzzComplete.App'
+    mainClass = 'FizzBuzzStartingpoint.App'
 }

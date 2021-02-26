@@ -1,4 +1,4 @@
-package FizzBuzz;
+package FizzBuzzComplete;
 
 public class App {
 
