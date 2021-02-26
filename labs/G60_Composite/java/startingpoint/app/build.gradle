@@ -26,5 +26,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'BuilderComplete.App'
+    mainClass = 'CompositeStartingPoint.App'
 }

@@ -1,6 +1,3 @@
-
-
-
 package CompositeComplete;
 
 public class App {

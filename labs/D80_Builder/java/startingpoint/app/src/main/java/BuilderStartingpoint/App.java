@@ -1,7 +1,4 @@
-
-
-
-package CompositeStartingpoint;
+package BuilderStartingpoint;
 
 public class App {
     public String getGreeting() {
