@@ -1,7 +1,5 @@
 package SingletonStartingpoint;
 
-import java.lang.*;
-
 public class Logger {
 
     public Logger() {
