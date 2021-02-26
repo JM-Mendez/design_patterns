@@ -18,5 +18,7 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/l
 # RUN curl -s "https://get.sdkman.io" | bash 
 # RUN bash -c "source /usr/local/sdkman/bin/sdkman-init.sh && sdk install springboot"
 
-COPY scripts/etc/bashrc /etc/bashrc
-ENV BASH_ENV /etc/bashrc
+#COPY scripts/etc/bashrc /etc/bashrc
+COPY scripts/etc/bashrc /home/vscode/.bashrc
+
+#ENV BASH_ENV /etc/bashrc
