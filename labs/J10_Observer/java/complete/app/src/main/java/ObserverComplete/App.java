@@ -1,6 +1,3 @@
-
-
-
 package ObserverComplete;
 
 public class App {
