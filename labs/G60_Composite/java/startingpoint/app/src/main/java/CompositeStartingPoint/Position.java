@@ -21,41 +21,22 @@ public class Position {
         return openedOn;
     }
 
-    public void setOpenedOn(LocalDateTime openedOn) {
-        this.openedOn = openedOn;
-    }
-
     public LocalDateTime getClosedOn() {
         return closedOn;
-    }
-
-    public void setClosedOn(LocalDateTime closedOn) {
-        this.closedOn = closedOn;
     }
 
     public Direction getDirection() {
         return direction;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
     public String getSymbol() {
         return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
     @Override
     public String toString() {
