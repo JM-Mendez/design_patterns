@@ -1,5 +1,7 @@
 package VisitorStartingpoint;
 
+import com.google.errorprone.annotations.Var;
+
 public class App {
 
 
@@ -26,6 +28,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        final DirectoryInfo root = getFileSystemRoot();
+        System.out.println(root.toString());
     }
 }
