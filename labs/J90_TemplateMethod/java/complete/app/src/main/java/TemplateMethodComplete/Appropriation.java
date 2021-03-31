@@ -1,5 +1,6 @@
 package TemplateMethodComplete;
 
+
 public class Appropriation extends Bill {
 
   public Appropriation(String id) {
@@ -7,17 +8,9 @@ public class Appropriation extends Bill {
   }
 
   @Override
-  public void processWorkflow(){
-    this.reportProgress("Proposal");
-		this.reportProgress("Committee Debate");
-		this.reportProgress("Committee Vote");
-
-		this.reportProgress("Some other committee Debate");
-		this.reportProgress("Some other committee Vote");
-
-		this.reportProgress("Floor Debate");
-		this.reportProgress("Floor Vote");
-		this.reportProgress("Executive Sign-off");
+  public void postCommittee(){
+    this.reportProgress("Some other committee debate.");
+    this.reportProgress("Some other committee vote.");
   }
   
 }

@@ -1,5 +1,6 @@
 package TemplateMethodComplete;
 
+
 public class Bill {
   private String id="";
 
@@ -19,12 +20,51 @@ public class Bill {
   }
 
   public void processWorkflow(){
-		this.reportProgress("Proposal");
-		this.reportProgress("Committee Debate");
-		this.reportProgress("Committee Vote");
-		this.reportProgress("Floor Debate");
-		this.reportProgress("Floor Vote");
-		this.reportProgress("Executive Sign-off");
+		preProposal();
+		proposal();
+		postProposal();
+
+		preCommittee();
+		committee();
+		postCommittee();
+
+		preFloor();
+		floor();
+		postFloor();
+
+		preSignoff();
+		signoff();
+		postSignoff();
   }
+
+  protected void preProposal(){}
+  protected void postProposal(){}
+  protected void proposal(){
+    this.reportProgress("Proposal");
+  }
+
+
+  protected void preCommittee(){}
+  protected void postCommittee(){}
+  protected void committee(){
+    this.reportProgress("Committee debate");
+    this.reportProgress("Committee vote");
+  }
+
+
+  protected void preFloor(){}
+  protected void postFloor(){}
+  protected void floor(){
+    this.reportProgress("Floor debate");
+    this.reportProgress("Floor vote");
+  }
+
+
+  protected void preSignoff(){}
+  protected void postSignoff(){}
+  protected void signoff(){
+    this.reportProgress("Executive Signoff");
+  }
+
 
 }
