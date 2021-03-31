@@ -1,28 +1,18 @@
 package ObserverComplete;
 
 public class FileDownloader {
-    private final ProgressReporter reporter = new ProgressReporter();
-    private final Logger logger = new Logger(); 
-
+    public final Event progressUpdate = new Event();
 
     public void download(String file){
-        final String beginMessage = "Beginning to download.";
-        this.logger.info(beginMessage);
-        this.reporter.update(beginMessage);
+  
+        this.progressUpdate.notifyObservers("Beginning to download.");
 
         for(int i =0; i<10;i++)
 		{
-			final String message = "Percent complete: " + String.valueOf(i*10);
-			logger.info(message);
-			reporter.update(message);
+			this.progressUpdate.notifyObservers("Percent complete: " + String.valueOf(i*10));
 		}
 
-        final String doneMessage = "Done downloading.";
-        this.logger.info(doneMessage);
-        this.reporter.update(doneMessage);        
-
+        this.progressUpdate.notifyObservers("Done downloading.");
     }
-
-
 
 }
