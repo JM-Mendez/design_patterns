@@ -11,4 +11,13 @@ public class Floor {
         this.material=value;
     }
 
+    public Floor(String material) {
+        this.material = material;
+    }
+
+    @Override
+    public String toString() {
+        return "Floor [material=" + material + "]";
+    }
+
 }

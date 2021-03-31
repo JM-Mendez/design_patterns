@@ -29,4 +29,15 @@ public class Wall {
         this.isExternal = isExternal;
     }
 
+    public Wall(String material, boolean isLoadBearing, boolean isExternal) {
+        this.material = material;
+        this.isLoadBearing = isLoadBearing;
+        this.isExternal = isExternal;
+    }
+
+    @Override
+    public String toString() {
+        return "Wall [isExternal=" + isExternal + ", isLoadBearing=" + isLoadBearing + ", material=" + material + "]";
+    }
+
 }

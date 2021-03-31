@@ -1,12 +1,12 @@
 package BuilderStartingpoint;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class House {
     private Roof roof;
     private Foundation foundation;
-    private ArrayList<Wall> walls;
-    private ArrayList<Floor> floors;
+    private Wall[] walls;
+    private Floor[] floors;
 
     public Roof getRoof() {
         return roof;
@@ -24,12 +24,20 @@ public class House {
         this.foundation = foundation;
     }
 
-    public Iterable<Wall> getWalls() {
-        return walls;
+
+
+    public House(Roof roof, Foundation foundation, Wall[] walls, Floor[] floors) {
+        this.roof = roof;
+        this.foundation = foundation;
+        this.walls = walls;
+        this.floors = floors;
     }
 
-    public Iterable<Floor> getFloors() {
-        return floors;
+    @Override
+    public String toString() {
+        return "House \n[floors=" + Arrays.toString(floors) + ", \nfoundation=" + foundation + ", \nroof=" + roof + ", \nwalls="
+                + Arrays.toString(walls) + "\n]";
     }
 
+  
 }

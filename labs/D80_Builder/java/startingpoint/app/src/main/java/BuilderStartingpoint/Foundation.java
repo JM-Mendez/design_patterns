@@ -11,4 +11,13 @@ public class Foundation {
         this.material=value;
     }
 
+    public Foundation(String material) {
+        this.material = material;
+    }
+
+    @Override
+    public String toString() {
+        return "Foundation [material=" + material + "]";
+    }
+
 }
