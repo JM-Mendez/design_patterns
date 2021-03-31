@@ -3,26 +3,25 @@ package BuilderComplete;
 public class App {
 
 
-    public static void main(String[] args) {
-        Roof roof = new Roof("Shingles");
-        Foundation foundation = new Foundation("Concrete");
+    public static void main(String[] args) throws Exception {
+        HouseBuilder builder = new HouseBuilder()
+                                .withConcreteFoundation()
+                                .withRegularRoof()
+                                .withWoodFloor();
 
-        Wall[] walls = {
-            new Wall("Wood", true, true),
-            new Wall("Wood", true, true),
-            new Wall("Wood", true, true),
-            new Wall("Glass", false, true),
-            new Wall("Drywall", false, false),
-        };
+        if(builder.isBuildable()){
+            System.out.println("Something's Fishy! The house shouldn't be buildable without walls.");
+        }
 
-        Floor[] floors = {
-            new Floor("Wood"),
-            new Floor("Concrete"),
-        };
+        builder.withExteriorWalls(4);
+        builder.withInteriorWalls(3);
 
-        House house = new House(roof,foundation,walls,floors);
+        if(!builder.isBuildable()){
+            System.out.println("Something's Fishy! The house should build now.");
+        }
+
 
         System.out.println("Here's your house:");
-        System.out.println(house);
+        System.out.println(builder.toHouse());
     }
 }
