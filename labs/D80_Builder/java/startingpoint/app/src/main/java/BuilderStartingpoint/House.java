@@ -35,8 +35,32 @@ public class House {
 
     @Override
     public String toString() {
-        return "House \n[floors=" + Arrays.toString(floors) + ", \nfoundation=" + foundation + ", \nroof=" + roof + ", \nwalls="
-                + Arrays.toString(walls) + "\n]";
+        StringBuilder message = new StringBuilder();
+
+        message.append("House [\n");
+
+        message.append(this.roof);
+        message.append("\n");
+
+        message.append(this.foundation);
+        message.append("\n");
+
+        message.append("Floors: \n");
+        for(Floor floor : this.floors){
+            message.append("  + ");
+            message.append(floor);
+            message.append("\n");
+        }
+
+        message.append("Walls: \n");
+        for(Wall wall : this.walls){
+            message.append("  +");
+            message.append(wall);
+            message.append("\n");
+        }
+
+        message.append("]\n");
+        return message.toString();
     }
 
   
