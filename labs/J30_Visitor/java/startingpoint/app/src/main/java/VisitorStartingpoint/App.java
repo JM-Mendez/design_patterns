@@ -1,9 +1,6 @@
 package VisitorStartingpoint;
 
-import com.google.errorprone.annotations.Var;
-
 public class App {
-
 
     public static DirectoryInfo getFileSystemRoot() {
         DirectoryInfo net = new DirectoryInfo("net");

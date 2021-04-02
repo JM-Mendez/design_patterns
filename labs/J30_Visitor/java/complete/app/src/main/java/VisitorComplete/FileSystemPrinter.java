@@ -1,10 +1,15 @@
 package VisitorComplete;
 
 public class FileSystemPrinter implements IFileSystemVisitor {
-  private int nesting =1;
+  private int nesting =0;
 
   private String pad(String toPad){
-    return String.format("%1$" + this.nesting*3 + "s", toPad);
+    String result = toPad;
+
+    for(int i=0;i<this.nesting;i++){
+      result = "  " + result;
+    }
+    return result;
   }
 
   @Override
@@ -15,7 +20,7 @@ public class FileSystemPrinter implements IFileSystemVisitor {
 
   @Override
   public void visit(DirectoryInfo target) {
-    String name = pad(target.getName());
+    String name = pad(target.getName()) + "\\";
     System.out.println(name);
     this.nesting+=1;
 

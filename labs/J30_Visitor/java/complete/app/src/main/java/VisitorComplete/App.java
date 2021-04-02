@@ -8,8 +8,8 @@ public class App {
         net.addChild(new FileInfo("tun"));
     
         DirectoryInfo dev = new DirectoryInfo("dev");
-        dev.addChild(new FileInfo("full"));
-        dev.addChild(new FileInfo("fuse"));
+        dev.addChild(new FileInfo("full.txt"));
+        dev.addChild(new FileInfo("fuse.txt"));
         dev.addChild(net);
     
         DirectoryInfo opt = new DirectoryInfo("opt");
@@ -29,6 +29,7 @@ public class App {
         final DirectoryInfo root = getFileSystemRoot();
         final FileSystemPrinter printer = new FileSystemPrinter();
 
+        System.out.println("\nHere's your file system:");
         printer.visit(root);
     }
 }
